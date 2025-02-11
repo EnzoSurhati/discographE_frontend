@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useRegisterMutation} from '../../discographE_frontend/src/components/accountSlice'
+import {useRegisterMutation} from './accountSlice'
 import {useNavigate} from 'react-router-dom'
 
 function Registertration() {

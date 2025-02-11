@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Nav from '../discographE_frontend/src/components/Nav'
+import Nav from "./components/Nav";
 import Home from './components/Home'
-import SingleAlbum from '../discographE_frontend/src/components/SingleAlbum'
+import SingleAlbum from './components/SingleAlbum'
+import Account from './components/Account'
 // import Login from './components/Login'
 import Register from './components/Registration'
 import { store } from './store'
 import { Provider } from 'react-redux'
 import {loadStripe} from '@stripe/stripe-js';
+import ParticleBackground from "./components/Particles";
+import Footer from "./components/Footer";
+import { CartProvider } from "./components/context/CartContext";
 // import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
@@ -19,15 +23,20 @@ function App() {
 
   return (
     <>
+    <ParticleBackground />
     <Provider store={store}>
       <Router>
+        <CartProvider>
         <Nav />
+        <Footer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/albums/:id" element={<SingleAlbum />} />
           {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/register" element={<Register />} />
+          <Route path="/account" element={<Account />} />
         </Routes>
+        </CartProvider>
       </Router>
       </Provider>
     </>

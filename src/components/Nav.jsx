@@ -1,33 +1,43 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react'
+import Cart from "./cart/Cart";
 
 function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-gray-800/95 backdrop-blur px-4 lg:px-0 shadow-md">
       <div className="container mx-auto flex h-14 items-center justify-between w-full">
+        <h1 className="text-white text-lg font-bold">E-store</h1>
+        <div className="relative">
+        <button
+          onClick={() => setIsCartOpen(!isCartOpen)}
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          🛒 Cart
+        </button>
+        {isCartOpen && <Cart />}
+      </div>
         
-        {/* Logo */}
-        {/* <Link to="/" className="flex items-center space-x-2">
-          <Music size={24} className="text-white" />
-          <span className="text-xl font-bold text-white">Jam</span>
-        </Link> */}
 
         {/* Desktop Menu */}
         <nav className="md:flex hidden items-center space-x-6 text-lg font-medium">
           <Link to="/albums" className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
             Albums
           </Link>
-          {/* <Link to="/account" className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
+          <Link to="/account" className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
             Account
-          </Link> */}
-          {/* <Link to="/login" className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
+          </Link>
+          <Link to="/login" className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
             Login
-          </Link> */}
+          </Link>
           <Link to="/register" className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
             Register
+          </Link>
+          <Link to="/cart" className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium">
+            Cart
           </Link>
         </nav>
 
@@ -50,11 +60,14 @@ function Nav() {
             <Link to="/account" className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700">
               Account
             </Link>
-            {/* <Link to="/login" className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700">
+            <Link to="/login" className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700">
               Login
-            </Link> */}
+            </Link>
             <Link to="/register" className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700">
               Register
+            </Link>
+            <Link to="/cart" className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700">
+              cart
             </Link>
           </div>
         </div>
@@ -94,3 +107,10 @@ export default Nav;
 // }
 
 // export default Nav;
+
+
+{/* Logo */}
+        {/* <Link to="/" className="flex items-center space-x-2">
+          <Music size={24} className="text-white" />
+          <span className="text-xl font-bold text-white">Jam</span>
+        </Link> */}

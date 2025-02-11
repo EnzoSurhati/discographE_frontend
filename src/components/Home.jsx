@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useGetAlbumsQuery } from "../../discographE_frontend/src/components/albumSlice";
+import { useGetAlbumsQuery } from "./albumSlice";
 
 function Home() {
   const [search, setSearch] = useState(""); 

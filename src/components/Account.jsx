@@ -1,6 +1,6 @@
 import React from "react";
-import { useUserInfoQuery } from "../../../src/components/accountSlice";
-import { useDeleteAlbumMutation } from "../../../src/components/albumSlice";
+import { useUserInfoQuery } from "./accountSlice";
+import { useDeleteAlbumMutation } from "./albumSlice";
 
  function Account() {
   const { data: userInfo, isLoading, error } = useUserInfoQuery();
