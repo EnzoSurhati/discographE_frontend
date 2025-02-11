@@ -64,7 +64,7 @@ function Registration() {
         {/* <button type="submit" disabled={isLoading} className="btn btn-primary"> */}
         <button type="submit" className="btn btn-primary">
           {/* {isLoading ? "Loading..." : "Sign Up"} */}
-          Sign Up
+          Sign Up!
         </button>
       </form>
     </div>
