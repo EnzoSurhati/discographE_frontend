@@ -1,37 +1,80 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import {useRegisterMutation} from './accountSlice'
 import {useNavigate} from 'react-router-dom'
+=======
+import { useState } from 'react';
+// import { useRegisterUserMutation } from '../store/registerSlice';
+// import { useNavigate } from 'react-router-dom';
+>>>>>>> ea55b049dc935d83173f79df52761c4dd6a0fcd1
 
-function Registertration() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
-  const [register, {isLoading, error}] = useRegisterMutation();
-  const navigate = useNavigate();
 
-  if(isLoading){
-    return <p>Hold up...</p>
-  }
 
-  if(error){
-    return <p>Already exists: {error.message}</p>
-  }
+function Registration() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+//   const [ registerUserApi, { isLoading }] = useRegisterUserMutation();
+//   const navigate = useNavigate();
+  const [error, setError] = useState(null);
 
-  const handleRegister = async (email, password) => {
-    console.log(email, password);
-    const newUser = await register({email, password});
-    console.log(newUser);
-    if(newUser){
-      const token = newUser.data.token;
-      localStorage.setItem('token', token);
-      navigate("/account");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const newUserInfo = { firstName, lastName, email, password };
+    //   const response = await registerUserApi(newUserInfo).unwrap();
+    //   console.log (response)
+    //   dispatch(registerUser({ token: response.token, user: response.user }));
+    //   navigate('/');
+    } catch (error) {
+      setError('Invalid registration, please try again!');
+      console.error('Invalid registration, please try again!', error);
     }
-    
-  }
+  };
 
   return (
-  <>
-  </>
+    <div>
+      <h2>Sign up Here</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {/* <button type="submit" disabled={isLoading} className="btn btn-primary"> */}
+        <button type="submit" className="btn btn-primary">
+          {/* {isLoading ? "Loading..." : "Sign Up"} */}
+          Sign Up!
+        </button>
+      </form>
+    </div>
   );
-  }
-export default Registertration;
+}
+
+export default Registration;
