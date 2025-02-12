@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import {useRegisterMutation} from './accountSlice'
 import {useNavigate} from 'react-router-dom'
-=======
-import { useState } from 'react';
-// import { useRegisterUserMutation } from '../store/registerSlice';
-// import { useNavigate } from 'react-router-dom';
->>>>>>> ea55b049dc935d83173f79df52761c4dd6a0fcd1
 
 
 

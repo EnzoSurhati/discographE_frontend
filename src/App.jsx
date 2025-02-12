@@ -12,7 +12,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import ParticleBackground from "./components/Particles";
 import Footer from "./components/Footer";
 import { CartProvider } from "./components/context/CartContext";
-// import "bootstrap/dist/css/bootstrap.min.css"
+import Loader from './components/Loader';
 
 function App() {
   const [token, setToken] = useState(null)
@@ -22,26 +22,26 @@ function App() {
   });
 
   return (
-    <>
-    <ParticleBackground />
-    <Provider store={store}>
-      <Router>
-        <CartProvider>
-        <Nav />
-        <Footer />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/albums/:id" element={<SingleAlbum />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-          <Route path="/register" element={<Register />} />
-          <Route path="/account" element={<Account />} />
-        </Routes>
-        </CartProvider>
-      </Router>
+    <div className="flex flex-col min-h-screen">
+      <ParticleBackground />
+      <Provider store={store}>
+        <Router>
+          <CartProvider>
+            <Nav />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/albums/:id" element={<SingleAlbum />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/account" element={<Account />} />
+              </Routes>
+            </main>
+            <Footer />
+          </CartProvider>
+        </Router>
       </Provider>
-    </>
-    
-  )
+    </div>
+  );
 }
 
 export default App
