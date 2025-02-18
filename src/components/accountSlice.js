@@ -3,7 +3,7 @@ import api from "./api.js";
 const userApi = api.injectEndpoints({
   endpoints: (build) => ({
     userInfo: build.query({
-      query: () => "/aboutUser/me",
+      query: () => "/aboutUser",
       providesTags: ["User"],
       transformResponse: (response) => response,
       transformErrorResponse: (error) => error.error.data,

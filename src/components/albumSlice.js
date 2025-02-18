@@ -3,20 +3,20 @@ import api from './api.js'
 const albumApi = api.injectEndpoints({
   endpoints: (build) => ({
     getAlbums: build.query({
-      query: () => "/albums",
+      query: () => "/album",
       providesTags:["Albums"],
-      transformResponse: (response) => response.albums,
-      transformErrorResponse: (error) => error.error.data,
+      transformResponse: (response) => response,
+      transformErrorResponse: (error) => error,
     }),
     getAlbum: build.query({
-      query: (id) => `./albums/${id}`,
+      query: (id) => `/album/${id}`,
       providesTags: ["Albums"],
-      transformResponse: (response) => response.album,
-      transformErrorResponse: (error) => error.error.data,
+      transformResponse: (response) => response,
+      transformErrorResponse: (error) => error,
     }),
     deleteAlbum: build.mutation({
       query: (id) => ({
-        url: `/albums/${id}`,
+        url: `/album/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["Albums"],
@@ -25,7 +25,7 @@ const albumApi = api.injectEndpoints({
     }),
     patchAlbum: build.mutation({
       query: ({id, purchaseQuantity}) => ({
-        url: `/albums/${id}`,
+        url: `/album/${id}`,
         method: 'PATCH',
         body: {purchaseQuantity},
       }),

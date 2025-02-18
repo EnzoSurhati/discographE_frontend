@@ -40,16 +40,15 @@ import { useDeleteAlbumMutation } from "./albumSlice";
         </div>
       </div>
 
-      {/* Album Reservations */}
+      {/* Reservations */}
       <div className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Your Album Reservations</h2>
+        <h2 className="text-2xl font-semibold mb-4">My Reservations</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {userInfo.albums.map((album) => (
+          {userInfo.albums?.map((album) => (
             <div key={album.id} className="relative bg-white rounded-xl shadow-md overflow-hidden p-5 group">
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-900 opacity-25 group-hover:opacity-40 rounded-xl"></div>
-              <img className="h-32 object-cover rounded-md mb-3" src={album.coverImage} alt={album.title} />
+              <img className="h-32 object-cover rounded-md mb-3" src={album.posterUrl} alt={album.title} />
               <h3 className="text-lg font-semibold">{album.title}</h3>
-              <p className="text-sm text-gray-500">{album.artist}</p>
               <p className="text-xs">{album.description}</p>
               <button
                 onClick={() => returnAlbum(album.id)}

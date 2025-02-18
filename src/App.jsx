@@ -23,7 +23,7 @@ function App() {
   });
 
   return (
-    <div className="z-10 justify-center items-center min-h-screen">
+    <div className="flex flex-col min-h-screen">
       {/* <Background /> */}
       <WishlistProvider>
       <ParticleBackground />
@@ -39,12 +39,12 @@ function App() {
                 <Route path="/account" element={<Account />} />
                 <Route path="/login" element={<Login />} />
               </Routes>
-            </main>
-            <Footer />
+            </main>  
           </CartProvider>
         </Router>
       </Provider>
       </WishlistProvider>
+      <Footer />
     </div>
   );
 }
