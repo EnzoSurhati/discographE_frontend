@@ -14,7 +14,7 @@ const albumApi = api.injectEndpoints({
       transformResponse: (response) => response.album,
       transformErrorResponse: (error) => error.error.data,
     }),
-    deleteAlbums: build.mutation({
+    deleteAlbum: build.mutation({
       query: (id) => ({
         url: `/albums/${id}`,
         method: "DELETE",

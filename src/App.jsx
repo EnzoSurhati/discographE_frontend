@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nav from "./components/Nav";
-import Home from './components/Home'
+import Albums from './components/Albums'
 import SingleAlbum from './components/SingleAlbum'
 import Account from './components/Account'
-// import Login from './components/Login'
+import Login from './components/Login'
 import Register from './components/Registration'
 import { store } from './store'
 import { Provider } from 'react-redux'
@@ -12,7 +12,8 @@ import {loadStripe} from '@stripe/stripe-js';
 import ParticleBackground from "./components/Particles";
 import Footer from "./components/Footer";
 import { CartProvider } from "./components/context/CartContext";
-import Loader from './components/Loader';
+import { WishlistProvider } from "./components/context/WishlistContext"; 
+// import Background from "./components/backgground/background";
 
 function App() {
   const [token, setToken] = useState(null)
@@ -22,7 +23,9 @@ function App() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="z-10 justify-center items-center min-h-screen">
+      {/* <Background /> */}
+      <WishlistProvider>
       <ParticleBackground />
       <Provider store={store}>
         <Router>
@@ -30,16 +33,18 @@ function App() {
             <Nav />
             <main className="flex-grow">
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Albums />} />
                 <Route path="/albums/:id" element={<SingleAlbum />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/account" element={<Account />} />
+                <Route path="/login" element={<Login />} />
               </Routes>
             </main>
             <Footer />
           </CartProvider>
         </Router>
       </Provider>
+      </WishlistProvider>
     </div>
   );
 }

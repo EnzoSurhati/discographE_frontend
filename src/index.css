@@ -5,3 +5,63 @@
 html{
   scroll-behavior: smooth;
 }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: spin 5s linear infinite; /* Adjust speed by changing '5s' */
+}
+
+.spin-animation {
+  transition: transform 0.3s ease-in-out;
+}
+
+.spin-animation:hover {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: slowSpin 10s linear infinite; /* Slow spin */
+}
+
+.spin-animation:hover {
+  animation: slowSpin 2s linear infinite; /* Fast spin on hover */
+}
+
+/* .w-full {
+  position: absolute;
+  z-index: -1;
+  
+}
+
+.bg-gray-200{
+  background-color: rgba(127, 255, 212, 0);
+} */
+
+#particles{
+  z-index: -1;
+}
+
+.shadow-lg {
+  z-index: 1;
+}
+
+.shadow-md {
+  z-index: 1;
+}
