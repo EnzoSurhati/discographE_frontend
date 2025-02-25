@@ -12,17 +12,14 @@ function Nav() {
   const { wishlist } = useWishlist();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur-md px-4 lg:px-0 shadow-md">
+    <header className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 lg:px-0">
       <div className="flex items-center justify-between w-full px-6">
         
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <img src="/src/assets/logo.png" alt="Hi-Fidelity Records Logo" 
           className="h-10 w-10 rounded-full object-cover spin-animation" />
-        </div>
 
-        {/* Hi-Fidelity Records Centered */}
-        <div className="absolute left-1/2 transform -translate-x-1/2">
           <Link to="/" className="text-2xl font-bold text-gray-900 font-[Montserrat] tracking-wide">
             Hi-Fidelity Records
           </Link>
@@ -31,7 +28,7 @@ function Nav() {
         {/* Desktop Navbar */}
         <div className="hidden md:flex items-center space-x-4">
           <nav className="flex space-x-4">
-            <Link to="/albums" className="px-3 py-2 border border-white text-black transform hover:scale-110 transition duration-300 hover:text-red-500">
+            <Link to="/" className="px-3 py-2 border border-white text-black transform hover:scale-110 transition duration-300 hover:text-red-500">
               Albums
             </Link>
             <Link to="/account" className="px-3 py-2 border border-white text-black transform  hover:scale-110 transition duration-300 hover:text-green-500">

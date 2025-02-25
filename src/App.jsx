@@ -28,8 +28,8 @@ function App() {
       <WishlistProvider>
       <ParticleBackground />
       <Provider store={store}>
+      <CartProvider>
         <Router>
-          <CartProvider>
             <Nav />
             <main className="flex-grow">
               <Routes>
@@ -40,8 +40,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
               </Routes>
             </main>  
-          </CartProvider>
         </Router>
+        </CartProvider>
       </Provider>
       </WishlistProvider>
       <Footer />

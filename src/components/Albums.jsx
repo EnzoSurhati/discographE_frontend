@@ -23,7 +23,7 @@ function Home() {
       <h1 className="text-xl font-bold my-4">Albums</h1>
       <input
         type="text"
-        placeholder="Search the collection..."
+        placeholder="Search"
         value={search}
         onChange={(e) => setSearch(e.target.value)} className="mb-4 p-2 border rounded"
       />
@@ -37,7 +37,7 @@ function Home() {
                 alt={album.title}
                 className="w-full h-[250px] object-cover rounded-md" 
               />
-              <h3>${album.price}</h3>
+              <h3>Price: ${album.price}</h3>
               <div className="text-sm text-center font-medium mt-2">{album.title}</div>
             </a>
           </div>

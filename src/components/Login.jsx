@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useLoginMutation } from './accountSlice';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [login, { isLoading, error }] = useLoginMutation();
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault(); 
@@ -12,6 +15,7 @@ function Login() {
       const response = await login({ email, password }).unwrap(); 
       console.log("Login Successful:", response);
       localStorage.setItem('token', response.token);
+      navigate('/account');
     } catch (err) {
       console.error("Login Failed:", err);
     }

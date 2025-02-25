@@ -1,20 +1,25 @@
 import React from "react";
 import { useWishlist } from "../context/WishlistContext";
 
-function Wishlist() {
+const Wishlist = () => {
   const { wishlist, removeFromWishlist } = useWishlist();
+  console.log(wishlist);
 
   return (
-    <div className="absolute top-16 right-4 bg-white shadow-lg rounded-md p-4 w-64">
-      <h2 className="font-bold text-lg">Wishlist</h2>
+    <div className="w-1/3 bg-white p-4 rounded-lg shadow-lg absolute top-16 right-4">
+      <h2 className="text-xl font-semibold mb-2">Wishlist</h2>
       {wishlist.length === 0 ? (
-        <p className="text-gray-500">Your wishlist is empty!</p>
+        <p className="text-gray-500">Wishlist is empty</p>
       ) : (
         <ul>
-          {wishlist.map((item) => (
-            <li key={item.id} className="flex justify-between items-center py-2">
-              <span>{item.title}</span>
-              <button className="text-red-500 hover:text-red-700" onClick={() => removeFromWishlist(item.id)}>
+          {wishlist.map((album, index) => (
+            <li key={index} className="flex justify-between items-center border-b py-2">
+              <span>{album.product.title}</span>
+              <h3>{album.quantity}</h3>
+              <button
+                className="bg-red-500 text-white px-2 py-1 rounded"
+                onClick={() => removeFromWishlist(album.id)}
+              >
                 Remove
               </button>
             </li>
@@ -23,6 +28,6 @@ function Wishlist() {
       )}
     </div>
   );
-}
+};
 
 export default Wishlist;

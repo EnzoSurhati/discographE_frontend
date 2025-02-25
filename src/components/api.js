@@ -16,7 +16,16 @@ const api = createApi({
     },
   }),
   tagTypes: ["Albums", "User"],
-  endpoints: () => ({}),
+  endpoints: (builder) => ({
+    deleteUser: builder.mutation({
+      query: (email) => ({
+        url: `/deleteUser/${email}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ["User"],
+    }),
+  }),
 });
 
+export const { useDeleteUserMutation } = api;
 export default api;
