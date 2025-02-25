@@ -19,7 +19,7 @@ function Home() {
   );
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="max-w-screen-xl mx-auto px-4">
       <h1 className="text-xl font-bold my-4">Albums</h1>
       <input
         type="text"
@@ -27,9 +27,9 @@ function Home() {
         value={search}
         onChange={(e) => setSearch(e.target.value)} className="mb-4 p-2 border rounded"
       />
-      <div className="grid grid-cols-4 gap-6 px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4">
         {filteredAlbums.map((album) => (
-          <div key={album.id} className="bg-white rounded-md shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+          <div key={album.id} className="bg-white shadow-md rounded-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:scale-105 p-4">
             {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-900 opacity-25 group-hover:opacity-40 rounded-xl"></div> */}
             <a href={`/albums/${album.id}`} className="block relative">
               <img
@@ -37,8 +37,8 @@ function Home() {
                 alt={album.title}
                 className="w-full h-[250px] object-cover rounded-md" 
               />
-              <h3>Price: ${album.price}</h3>
               <div className="text-sm text-center font-medium mt-2">{album.title}</div>
+              <p className="text-xl font-bold text-center text-red-600 mt-2">${album.price}</p>
             </a>
           </div>
         ))}

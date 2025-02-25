@@ -7,12 +7,12 @@ const Cart = () => {
   console.log(cart);
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen">
+    <div className="flex flex-col justify-center items-center min-h-screen pt-20">
   <h1 className="text-3xl font-bold mb-6">Your Shopping Cart</h1>
 
   {cart.length === 0 ? (
     // When the cart is empty, show "Go Shoppin" button
-    <div className="text-center">
+    <div className="text-center bg-white shadow-lg rounded-xl p-8 w-full max-w-lg">
       <p className="text-center text-gray-500 mb-6">Your cart is empty.</p>
       <Link to="/albums" className="px-6 py-3 bg-red-400 text-white text-lg font-semibold rounded-lg hover:bg-red-700">
         Go Shoppin

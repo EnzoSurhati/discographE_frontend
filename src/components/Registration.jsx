@@ -28,7 +28,7 @@ function Registration() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-screen">
       <div className="bg-white p-8 rounded-lg shadow-md w-96 border border-gray-300">
         <h2 className="text-2xl font-bold text-center text-gray-900 mb-4">Create an Account</h2>
 

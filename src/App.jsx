@@ -13,8 +13,8 @@ import {loadStripe} from '@stripe/stripe-js';
 import ParticleBackground from "./components/Particles";
 import Footer from "./components/Footer";
 import { CartProvider } from "./components/context/CartContext";
-import { WishlistProvider } from "./components/context/WishlistContext"; 
-// import Background from "./components/backgground/background";
+import { WishlistProvider } from "./components/context/WishlistContext";
+import Checkout from './components/checkout/Checkout';
 
 function App() {
   const [token, setToken] = useState(null)
@@ -25,7 +25,6 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* <Background /> */}
       <WishlistProvider>
       <ParticleBackground />
       <Provider store={store}>
@@ -40,6 +39,7 @@ function App() {
                 <Route path="/account" element={<Account />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
               </Routes>
             </main>  
         </Router>

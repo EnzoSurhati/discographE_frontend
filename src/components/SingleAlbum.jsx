@@ -37,7 +37,7 @@ function SingleAlbum() {
           />
           <h1 className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{singleAlbum.title}</h1>
           <p className="mt-2 text-gray-900">{singleAlbum.description}</p>
-          <h3 className="text-lg text-red-600">Quantity: {singleAlbum.quantity}</h3>
+          {/* <h3 className="text-lg text-red-600">Quantity: {singleAlbum.quantity}</h3> */}
 
           <div className="mt-4">
             <input
