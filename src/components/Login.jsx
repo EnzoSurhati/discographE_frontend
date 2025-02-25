@@ -25,7 +25,7 @@ function Login() {
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-96 bg-white p-6 rounded-lg shadow-2xl border border-gray-300">
         <h2 className="text-center text-2xl font-bold text-gray-900 mb-4">Login</h2>
-        {error && <p className="text-red-500 text-center">{error.data?.message || "Login failed"}</p>}
+        {error && <p className="text-red-500 text-center">{error.data?.message || "Login failed."}</p>}
 
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>

@@ -73,7 +73,7 @@ const Checkout = () => {
             <div className="flex justify-between">
               <button
                 onClick={() => setStep(1)}
-                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-all"
+                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all"
               >
                 ← Back to Billing
               </button>
@@ -108,7 +108,7 @@ const Checkout = () => {
             <div className="flex justify-between">
               <button
                 onClick={() => setStep(2)}
-                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-all"
+                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all"
               >
                 ← Back to Shipping
               </button>
