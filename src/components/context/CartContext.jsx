@@ -2,11 +2,9 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
-// Create Provider Component
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // Load cart from localStorage when component mounts
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     if (storedCart) {
@@ -14,7 +12,6 @@ export const CartProvider = ({ children }) => {
     }
   }, []);
 
-  // adds items to a cart
    const addToCart = (product, quantity) => {
     console.log(product);
     setCart((prev) => {
@@ -24,10 +21,9 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // Function to remove an item from the cart
   const removeFromCart = (id) => {
     setCart((prev) => {
-      const updatedCart = prev.filter((item) => item.id !== id);
+      const updatedCart = prev.filter((item) => item.product.id !== id);
       localStorage.setItem("cart", JSON.stringify(updatedCart)); // Update localStorage
       return updatedCart;
     });
@@ -40,7 +36,6 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Custom Hook to use Cart Context
 export const useCart = () => {
   return useContext(CartContext);
 };

@@ -6,6 +6,7 @@ import SingleAlbum from './components/SingleAlbum'
 import Account from './components/Account'
 import Login from './components/Login'
 import Register from './components/Registration'
+import Cart from "./components/cart/Cart";
 import { store } from './store'
 import { Provider } from 'react-redux'
 import {loadStripe} from '@stripe/stripe-js';
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/cart" element={<Cart />} />
               </Routes>
             </main>  
         </Router>

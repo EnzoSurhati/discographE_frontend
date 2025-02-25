@@ -12,8 +12,16 @@ import LogoutButton from "./LogoutButton";
     return <p>Loading...</p>;
   }
 
-  if (error) {
-    return <p>Error: {error.message}</p>;
+  if (error || !userInfo) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="bg-white p-6 rounded-lg shadow-lg shadow-red-500/50 border border-red-300 
+                        animate-pulse transition duration-300 hover:shadow-red-600/60">
+          <h2 className="text-xl font-semibold text-red-600 drop-shadow-lg">Need to login/register</h2>
+          <p className="text-gray-700">Please log in or register to access your account.</p>
+        </div>
+      </div>
+    );
   }
 
   const returnAlbum = async (id) => {

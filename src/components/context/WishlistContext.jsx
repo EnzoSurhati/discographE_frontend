@@ -24,7 +24,7 @@ export const WishlistProvider = ({ children }) => {
   const removeFromWishlist = (id) => {
     setWishlist((prev) => {
       const updatedWishlist = prev.filter((item) => item.id !== id);
-      localStorage.setItem("cart", JSON.stringify(updatedWishlist));
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
       return updatedWishlist;
     });
   };

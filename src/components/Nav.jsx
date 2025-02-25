@@ -40,6 +40,11 @@ function Nav() {
             <Link to="/register" className="px-3 py-2 border border-white text-black transform hover:scale-110 transition duration-300 hover:text-purple-500">
               Register
             </Link>
+            <Link to="/cart">
+              <button className="relative text-gray-900 p-3 hover:text-red-500 transition transform hover:scale-110">
+              <ShoppingCart size={23} className="text-gray-900 hover:text-red-500 transition" />
+              </button>
+            </Link>
           </nav>
 
           {/* Wishlist Button */}
@@ -57,13 +62,13 @@ function Nav() {
           {isWishlistOpen && <Wishlist />} 
 
           {/* Cart Button */}
-          <button
+          {/* <button
             onClick={() => setIsCartOpen(!isCartOpen)}
             className="relative text-gray-900 p-3 hover:text-red-500 transition transform hover:scale-110"
           >
             <ShoppingCart size={23}/>
           </button>
-          {isCartOpen && <Cart />} 
+          {isCartOpen && <Cart />}  */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -88,6 +93,11 @@ function Nav() {
             <Link to="/register" className="px-3 py-2 border border-white text-black transform hover:scale-110 transition duration-300 hover:text-red-500">
               Register
             </Link>
+            <Link to="/cart">
+              <button className="relative text-gray-900 p-3 hover:text-red-500 transition transform hover:scale-110">
+              <ShoppingCart size={23} className="text-gray-900 hover:text-red-500 transition" />
+              </button>
+            </Link>
           </nav>
 
           <div className="flex justify-center mt-4 space-x-4">
@@ -104,13 +114,13 @@ function Nav() {
               )}
             </button>
 
-            {/* Mobile Cart */}
+            {/* Mobile Cart
             <button
               onClick={() => setIsCartOpen(!isCartOpen)}
               className="relative text-gray-900 p-3 hover:text-red-500 transition transform hover:scale-110"
             >
-              <ShoppingCart size={23}/>
-            </button>
+              <ShoppingCart size={23} className="text-gray-900 hover:text-red-500 transition"/>
+            </button> */}
           </div>
         </div>
       )}
