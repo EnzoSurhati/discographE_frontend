@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const API_URL = "https://hi-fi-whd3.onrender.com/api"
+const API_URL = "https://hi-fi-backend.onrender.com/api"
 
 const api = createApi({
   reducerPath: "api",

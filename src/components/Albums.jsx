@@ -11,6 +11,7 @@ function Home() {
   }
 
   if(error){
+    console.log(error);
     return <p className="text-center text-red-500">Error: {error.message}</p>
   }
   console.log(albums);
