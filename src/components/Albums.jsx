@@ -19,7 +19,7 @@ function Home() {
   );
 
   return (
-    <div className="max-w-screen-xl mx-auto px-4">
+    <div className="max-w-screen-xl mx-auto px-4 mt-20">
       <h1 className="text-xl font-bold my-4">Albums</h1>
       <input
         type="text"

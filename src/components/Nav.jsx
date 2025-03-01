@@ -28,16 +28,16 @@ function Nav() {
         {/* Desktop Navbar */}
         <div className="hidden md:flex items-center space-x-4">
           <nav className="flex space-x-4">
-            <Link to="/" className="px-3 py-2 border border-white text-black transform hover:scale-110 transition duration-300 hover:text-red-500">
+            <Link to="/" className="px-3 py-2 font-bold text-black hover:scale-110 transition duration-300 hover:text-red-500">
               Albums
             </Link>
-            <Link to="/account" className="px-3 py-2 border border-white text-black transform  hover:scale-110 transition duration-300 hover:text-green-500">
+            <Link to="/account" className="px-3 py-2 font-bold text-black hover:scale-110 transition duration-300 hover:text-green-500">
               Account
             </Link>
-            <Link to="/login" className="px-3 py-2 border border-white text-black transform hover:scale-110 transition duration-300 hover:text-orange-500">
+            <Link to="/login" className="px-3 py-2 font-bold text-black hover:scale-110 transition duration-300 hover:text-red-500">
               Login
             </Link>
-            <Link to="/register" className="px-3 py-2 border border-white text-black transform hover:scale-110 transition duration-300 hover:text-purple-500">
+            <Link to="/register" className="px-3 py-2 font-bold text-black hover:scale-110 transition duration-300 hover:text-orange-500">
               Register
             </Link>
             <Link to="/cart">
