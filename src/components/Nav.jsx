@@ -17,7 +17,7 @@ function Nav() {
         
         {/* Logo */}
         <div className="flex items-center ">
-          <img src="/src/assets/logo.png" alt="Hi-Fidelity Records Logo" 
+          <img src="/logo.png" alt="Hi-Fidelity Records Logo" 
           className="h-10 w-10 rounded-full object-cover spin-animation" />
 
           <Link to="/" className="text-2xl font-bold text-gray-900 font-[Montserrat] tracking-wide">
